@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
  **/
 public class UUIDFetcher {
 
-
     private static final String UUID_URL = "https://api.mojang.com/users"
             + "/profiles/minecraft/";
 
@@ -24,38 +23,6 @@ public class UUIDFetcher {
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * Returns the UUID of the searched player.
-     *
-     * @param player The player.
-     * @return The UUID of the given player.
-     */
-    //Uncomment this if you want the helper method for BungeeCord:
-    /*
-    public static UUID getUUID(ProxiedPlayer player) {
-        return getUUID(player.getName());
-    }
-    */
-
-    /**
-     * Returns the UUID of the searched player.
-     *
-     * @param player The player.
-     * @return The UUID of the given player.
-     */
-    //Uncomment this if you want the helper method for Bukkit/Spigot:
-    /*
-    public static UUID getUUID(Player player) {
-        return getUUID(player.getName());
-    }
-    */
-
-    /**
-     * Returns the UUID of the searched player.
-     *
-     * @param name The name of the player.
-     * @return The UUID of the given player.
-     */
     public static UUID getUUID(String name) {
         String output = callURL(UUID_URL + name);
         Matcher m = UUID_PATTERN.matcher(output);
@@ -65,12 +32,6 @@ public class UUIDFetcher {
         return null;
     }
 
-    /**
-     * Helper method for inserting dashes into
-     * unformatted UUID.
-     *
-     * @return Formatted UUID with dashes.
-     */
     public static String insertDashes(String uuid) {
         StringBuilder sb = new StringBuilder(uuid);
         sb.insert(8, '-');
