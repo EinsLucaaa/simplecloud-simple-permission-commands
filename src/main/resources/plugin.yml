@@ -1,0 +1,9 @@
+name: SimpleCloud-Simple-Permission-Commands
+version: 1.0
+author: EinsLuca
+api-version: 1.19
+main: me.luca.permission.SimplePermissionPlugin
+
+depend:
+  - SimpleCloud-Plugin
+  - SimpleCloud-Permission
