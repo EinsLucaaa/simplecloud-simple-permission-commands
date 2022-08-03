@@ -36,7 +36,7 @@ class RankCommand(
 
                 if (sender is ConsoleCommandSender) {
                     val player = it.get<String>("player")
-                    val group = it.get<String>("player")
+                    val group = it.get<String>("group")
                     val timeOut = it.get<Long>("timeout")
 
                     val permissionPlayer = PermissionPool.instance.getPermissionPlayerManager().getCachedPermissionPlayer(UUIDFetcher.getUUID(player))
